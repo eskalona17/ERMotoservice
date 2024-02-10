@@ -1,3 +1,18 @@
+export const navbarItems = [
+  {
+    id: 1,
+    link: "Inicio"
+  },
+  {
+    id: 2,
+    link: "Sobre nosotros"
+  },
+  {
+    id: 1,
+    link: "Contacta"
+  }
+]
+
 export const data = [
   {
     id: 1,

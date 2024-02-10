@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { navbarItems } from '../../assets/data/data'
+import HeaderItem from './HeaderItem'
 
 const Header = () => {
   return (
@@ -8,9 +10,11 @@ const Header = () => {
           <div>
               <p>Logo</p>
           </div>
-          <div>
-            <p>Moto</p>
-          </div>
+            <ul className='flex md:flex-row'>
+            {navbarItems.map((item) => (
+              <HeaderItem key={item.id} {...item} />
+            ))}
+            </ul>
       </nav>
     </header>
   )
