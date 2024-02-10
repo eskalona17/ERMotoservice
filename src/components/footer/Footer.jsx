@@ -2,9 +2,9 @@ import React from "react"
 
 function Footer() {
   return (
-    <div>
+    <section className="custom-screen">
       <p>Footer</p>
-    </div>
+    </section>
   )
 }
 

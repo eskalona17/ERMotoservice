@@ -1,10 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function Header() {
+const Header = () => {
   return (
-    <div>
-      <p className='text-3xl font-bold underline'>Header</p>
-    </div>
+    <header>
+      <nav className='custom-screen py-3 flex items-center justify-between md:py-7'>
+          <div>
+              <p>Logo</p>
+          </div>
+          <div>
+            <p>Moto</p>
+          </div>
+      </nav>
+    </header>
   )
 }
 

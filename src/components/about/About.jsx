@@ -1,11 +1,18 @@
-import React from 'react'
+import React from "react";
+import { about } from "../../assets/data/data";
+import AboutItem from "./AboutItem";
 
-function About() {
+const About = () => {
   return (
-    <div>
-      <p>About</p>
-    </div>
-  )
-}
+    <section className="bg-gradient-to-b from-slate-50 to-gray-100">
+      <div className="custom-screen p-4 ">
+      {about.map((item) => (
+        <AboutItem key={item.id} {...item} />
+      ))}
+      </div>
+      
+    </section>
+  );
+};
 
-export default About
+export default About;
