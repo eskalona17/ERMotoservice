@@ -6,6 +6,11 @@
   @apply max-w-screen-xl mx-auto py-12 px-4 md:px-8;
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+
+}
+
 /* 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

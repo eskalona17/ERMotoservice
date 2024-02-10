@@ -1,9 +1,12 @@
 import React from "react"
 
-function Footer() {
+const Footer = () => {
   return (
-    <section className="custom-screen">
-      <p>Footer</p>
+    <section className="bg-cyan-700">
+      <div className="custom-screen flex flex-col justify-center items-center text-white">
+        <p>2024 ERMotoservice</p>
+        <p>Made with love by Fernando Escalona</p>
+      </div>
     </section>
   )
 }
