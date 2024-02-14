@@ -16,7 +16,7 @@ export const navbarItems = [
 export const data = [
   {
     id: 1,
-    icon: "🌟",
+    icon: "security",
     title: "Compromiso con la seguridad",
     description: `La seguridad de tu moto es nuestra máxima prioridad. 
       Empleamos rigurosos protocolos y tecnologías de vanguardia para garantizar que tu 
@@ -24,7 +24,7 @@ export const data = [
   },
   {
     id: 2,
-    icon: "🚀",
+    icon: "care",
     title: "Atención personalizada",
     description:
       `Nuestro equipo te ofrece un servicio personalizado y 
@@ -33,7 +33,7 @@ export const data = [
   },
   {
     id: 3,
-    icon: "🌈",
+    icon: "experience",
     title: "Años de experiencia",
     description:
       `Llevamos más de 20 años en el mundo de las motos tanto para 
