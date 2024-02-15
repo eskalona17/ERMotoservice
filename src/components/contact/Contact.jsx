@@ -1,6 +1,9 @@
 import React from "react";
+import { MdMailOutline } from "react-icons/md";
+import { FaPhone } from "react-icons/fa6";
 
-function Contact() {
+
+const Contact = () => {
   return (
     <section className="custom-screen flex flex-col items-start md:flex-row-reverse justify-evenly py-4 w-full gap-10">
       <div className="flex flex-col w-full items-center justify-center">
@@ -14,12 +17,12 @@ function Contact() {
             <h3 className="text-primary-700 text-2xl font-semibold mb-5">
               Información de contacto
             </h3>
-            <div className="flex gap-x-5 w-64">
-              <span>icono</span>
+            <div className="flex gap-x-5 w-64 items-center">
+              <span><MdMailOutline /></span>
               <p className="text-primary-500">info@ermotoservice.com</p>
             </div>
-            <div className="flex gap-x-5 w-64">
-              <span>icono</span>
+            <div className="flex gap-x-5 w-64 items-center">
+              <span><FaPhone /></span>
               <p className="text-primary-500">+34 666 66 66 66</p>
             </div>
           </div>

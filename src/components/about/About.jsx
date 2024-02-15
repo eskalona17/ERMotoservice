@@ -4,7 +4,7 @@ import AboutItem from "./AboutItem"
 
 const About = () => {
   return (
-    <section className="bg-gradient-to-b from-slate-50 to-gray-100 my-10">
+    <section className="bg-gradient-to-b from-secondary-50 via-secondary-100 to-secondary-100 my-10">
         {about.map((item, index) => (
           <AboutItem 
           key={item.id} 

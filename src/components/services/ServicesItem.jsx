@@ -1,6 +1,6 @@
 import React from "react"
 
-const Card = ({ icon, title, description }) => {
+const ServicesItem = ({ icon, title, description }) => {
   return (
     <div className="flex-shrink-0 w-80 bg-white rounded-lg p-6 mx-4 shadow-md ">
       <div className="flex items-center justify-center text-3xl mb-4">{icon}</div>
@@ -10,4 +10,4 @@ const Card = ({ icon, title, description }) => {
   )
 }
 
-export default Card
+export default ServicesItem

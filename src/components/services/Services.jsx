@@ -1,5 +1,5 @@
 import React from "react"
-import Card from "../card/Card"
+import ServicesItem from "../services/ServicesItem"
 import { data } from "../../assets/data/data"
 import { LuShieldCheck } from "react-icons/lu"
 import { FaRegHandshake } from "react-icons/fa6"
@@ -9,7 +9,7 @@ const Services = () => {
   return (
     <section className="custom-screen flex flex-row overflow-x-auto p-4 space-x-4 lg:justify-center">
       {data.map((item) => (
-        <Card key={item.id} {...item} icon={renderIcon(item.icon, "#215a83")}/>
+        <ServicesItem key={item.id} {...item} icon={renderIcon(item.icon, "#215a83")}/>
       ))}
     </section>
   )
