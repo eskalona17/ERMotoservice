@@ -4,7 +4,7 @@ import AboutItem from "./AboutItem"
 
 const About = () => {
   return (
-    <section id="about" className="bg-gradient-to-b from-secondary-50 via-secondary-100 to-secondary-100 lg:border-b-2 lg:border-secondary-300">
+    <section id="about" className="my-24 bg-gradient-to-b from-secondary-50 via-secondary-100 to-secondary-100 lg:border-secondary-300">
         {about.map((item, index) => (
           <AboutItem 
           key={item.id} 
@@ -20,7 +20,7 @@ const getStyleForIndex = (index) => {
   if (index === 0 || index === 2) {
     return "row"
   } else if (index === 1) {
-    return "row-reverse"
+    return "row-reverse hover:reflect_left"
   }
 }
 

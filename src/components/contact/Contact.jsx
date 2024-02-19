@@ -67,7 +67,7 @@ const Contact = () => {
     <GoogleReCaptchaProvider reCaptchaKey={import.meta.env.RECAPTCHA_KEY}>
       <section id="contact" className="custom-screen flex flex-col items-start md:flex-row-reverse justify-evenly py-4 w-full gap-10">
         <div className="flex flex-col w-full items-center justify-center">
-          <div className="py-5 mb-5 text-center">
+          <div className="mb-16 text-center">
             <h3 className="text-primary-700 mb-3 text-3xl font-semibold">
               Contacta con nosotros
             </h3>
