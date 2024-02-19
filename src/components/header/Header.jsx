@@ -28,7 +28,7 @@ const Header = () => {
         <ul
           className={`flex ${
             showMenu ? 'block' : 'hidden md:flex'
-          } md:flex-row`}
+          } md:flex-row gap-16`}
         >
           {/* Ítems del menú */}
           {navbarItems.map((item) => (

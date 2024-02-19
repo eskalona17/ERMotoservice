@@ -7,7 +7,7 @@ import { PiTruck } from "react-icons/pi"
 
 const Services = () => {
   return (
-    <section className="custom-screen flex flex-row overflow-x-auto p-4 space-x-4 lg:justify-center">
+    <section id="services" className="custom-screen flex flex-row overflow-x-auto p-4 space-x-4 lg:justify-center">
       {data.map((item) => (
         <ServicesItem key={item.id} {...item} icon={renderIcon(item.icon, "#215a83")}/>
       ))}
