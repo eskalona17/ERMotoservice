@@ -1,14 +1,14 @@
 export const navbarItems = [
   {
-    id: 1,
+    id: "home",
     link: "Inicio"
   },
   {
-    id: 2,
+    id: "about",
     link: "Sobre nosotros"
   },
   {
-    id: 3,
+    id: "contact",
     link: "Contacta"
   }
 ]

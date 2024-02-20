@@ -8,7 +8,6 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
@@ -25,8 +24,25 @@ const Header = () => {
     };
   }, []);
 
+  const handleSmoothScroll = (sectionId) => {
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+      const targetOffset = targetSection.offsetTop;
+      const currentOffset = window.scrollY;
+      const distance = Math.abs(targetOffset - currentOffset);
+  
+      window.scrollTo({
+        top: targetOffset,
+        behavior: 'smooth',
+      });
+
+      // Cerrar el menú si está abierto (opcional)
+      setShowMenu(false);
+    }
+  };
+
   return (
-    <div
+    <section id="home"
       className={`w-full z-30 transition-all duration-300 ${
         isScrolled ? "fixed bg-secondary-50 opacity-90 shadow-lg" : ""
       }`}
@@ -89,24 +105,25 @@ const Header = () => {
         </div>
 
         {/* Menú de navegación */}
-          <div className={`md:flex ${showMenu ? 'block' : 'hidden'}`}>
-            <img
-              src={logoMobile}
-              className={`block md:hidden`}
-              alt="Logo ERmotoservice"
-            />
-            <ul
-              className={`flex flex-col md:flex-row mt-10 gap-16 md:flex ${
-                showMenu ? "mt-10" : "mt-0"
-              }`}
-            >
-              {navbarItems.map((item) => (
-                <HeaderItem key={item.id} {...item} />
-              ))}
-            </ul>
-          </div>
+        <div className={`md:flex ${showMenu ? 'block' : 'hidden'}`}>
+          <img
+            src={logoMobile}
+            className={`block md:hidden`}
+            alt="Logo ERmotoservice"
+          />
+          <ul
+            className={`flex flex-col md:flex-row mt-10 gap-16 md:flex ${
+              showMenu ? "mt-10" : "mt-0"
+            }`}
+          >
+            {navbarItems.map((item) => (
+              
+              <HeaderItem key={item.id} id={item.id} link={item.link} onClick={() => handleSmoothScroll(item.id)} />
+            ))}
+          </ul>
+        </div>
       </nav>
-    </div>
+    </section>
   );
 };
 
