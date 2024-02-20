@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section id="hero">
       <div className="custom-screen flex items-center justify-between gap-12 md:gap-32">
-        <div className="flex flex-col gap-y-5 space-y-5 max-w-md">
+        <div className="flex flex-col gap-y-3 lg:gap-y-9 max-w-md">
           <h1 className="text-primary-700 text-xl text-gray-800 font-extrabold md:text-2xl lg:text-5xl uppercase">
             Transporte de motos
           </h1>
