@@ -1,52 +1,60 @@
-import React, { useState, useEffect } from "react";
-import { navbarItems } from "../../assets/data/data";
-import HeaderItem from "./HeaderItem";
-import logo from "../../assets/img/logo.png";
-import logoMobile from "../../assets/img/logoMobile.png";
+import React, { useState, useEffect } from "react"
+import { navbarItems } from "../../assets/data/data"
+import HeaderItem from "./HeaderItem"
+import logo from "../../assets/img/logo.png"
+import logoMobile from "../../assets/img/logoMobile.png"
 
 const Header = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [prevScrollY, setPrevScrollY] = useState(0);
+  const [showMenu, setShowMenu] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [prevScrollY, setPrevScrollY] = useState(0)
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
+    setShowMenu(!showMenu)
+  }
 
   const handleScroll = () => {
-    const scrollTop = window.scrollY;
-    setIsScrolled(scrollTop > 0);
+    const scrollTop = window.scrollY
+    setIsScrolled(scrollTop > 0)
     // Determinar la dirección del scroll
-    setPrevScrollY(scrollTop);
-  };
+    setPrevScrollY(scrollTop)
+  }
 
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
 
 
-  const handleSmoothScroll = (sectionId) => {
-    const targetSection = document.getElementById(sectionId);
+  const handleSmoothScroll = (event, sectionId) => {
+    event.preventDefault()
+    const targetSection = document.getElementById(sectionId)
     if (targetSection) {
-      const targetOffset = targetSection.offsetTop;
+      const targetOffset = targetSection.offsetTop
   
       window.scrollTo({
         top: targetOffset,
         behavior: 'smooth',
-      });
+      })
 
       // Cerrar el menú si está abierto (opcional)
-      setShowMenu(false);
+      setShowMenu(false)
     }
-  };
+  }
+
+  const handleLogoClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
 
     // Determinar si el usuario está haciendo scroll hacia arriba o hacia abajo
-    const isScrollingUp = prevScrollY < window.scrollY;
+    const isScrollingUp = prevScrollY < window.scrollY
 
   return (
     <section id="home"
@@ -61,6 +69,7 @@ const Header = () => {
       >
         {/* Logo */}
         <div className={`flex items-center ${showMenu ? "hidden" : ""}`}>
+          <a href="#home" onClick={handleLogoClick}>
           <img
             src={logoMobile}
             className={`block lg:hidden`}
@@ -71,6 +80,7 @@ const Header = () => {
             className={`hidden lg:block`}
             alt="Logo ERmotoservice"
           />
+          </a>
         </div>
 
         {/* Menú de hamburguesa */}
@@ -124,14 +134,13 @@ const Header = () => {
             }`}
           >
             {navbarItems.map((item) => (
-              
-              <HeaderItem key={item.id} id={item.id} link={item.link} onClick={() => handleSmoothScroll(item.id)} />
+              <HeaderItem key={item.id} id={item.id} link={item.link} onClick={(e) => handleSmoothScroll(e, item.id)} />
             ))}
           </ul>
         </div>
       </nav>
     </section>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

@@ -8,7 +8,7 @@ import Footer from "./components/footer/Footer"
 import { FloatingWhatsApp } from "react-floating-whatsapp"
 import logo from "./assets/img/logo.png"
 
-function App() {
+const App = () => {
   return (
     <>
       <header>
@@ -26,7 +26,7 @@ function App() {
       <FloatingWhatsApp
         accountName="ERMotoservice"
         phoneNumber="+34639134295"
-        chatMessage="Hola, ¿en qué podemos ayudarte?"
+        chatMessage="¡Hola!, ¿en qué podemos ayudarte?"
         statusMessage=""
         placeholder="Escribe un mensaje..."
         avatar={logo}
