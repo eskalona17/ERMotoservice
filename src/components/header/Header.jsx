@@ -7,6 +7,7 @@ import logoMobile from "../../assets/img/logoMobile.png";
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [prevScrollY, setPrevScrollY] = useState(0);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -15,7 +16,10 @@ const Header = () => {
   const handleScroll = () => {
     const scrollTop = window.scrollY;
     setIsScrolled(scrollTop > 0);
+    // Determinar la dirección del scroll
+    setPrevScrollY(scrollTop);
   };
+
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -24,12 +28,12 @@ const Header = () => {
     };
   }, []);
 
+
+
   const handleSmoothScroll = (sectionId) => {
     const targetSection = document.getElementById(sectionId);
     if (targetSection) {
       const targetOffset = targetSection.offsetTop;
-      const currentOffset = window.scrollY;
-      const distance = Math.abs(targetOffset - currentOffset);
   
       window.scrollTo({
         top: targetOffset,
@@ -41,10 +45,13 @@ const Header = () => {
     }
   };
 
+    // Determinar si el usuario está haciendo scroll hacia arriba o hacia abajo
+    const isScrollingUp = prevScrollY < window.scrollY;
+
   return (
     <section id="home"
       className={`w-full z-30 transition-all duration-300 ${
-        isScrolled ? "fixed bg-secondary-50 opacity-90 shadow-lg" : ""
+        isScrolled && !isScrollingUp ? "fixed bg-secondary-50 opacity-90 shadow-lg" : ""
       }`}
     >
       <nav
@@ -112,7 +119,7 @@ const Header = () => {
             alt="Logo ERmotoservice"
           />
           <ul
-            className={`flex flex-col md:flex-row mt-10 gap-16 md:flex ${
+            className={`flex flex-col md:flex-row gap-16 md:flex ${
               showMenu ? "mt-10" : "mt-0"
             }`}
           >

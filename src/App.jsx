@@ -5,6 +5,8 @@ import Services from "./components/services/Services"
 import About from "./components/about/About"
 import Contact from "./components/contact/Contact"
 import Footer from "./components/footer/Footer"
+import { FloatingWhatsApp } from "react-floating-whatsapp"
+import logo from "./assets/img/logo.png"
 
 function App() {
   return (
@@ -21,6 +23,14 @@ function App() {
       <footer>
         <Footer />
       </footer>
+      <FloatingWhatsApp
+        accountName="ERMotoservice"
+        phoneNumber="+34639134295"
+        chatMessage="Hola, ¿en qué podemos ayudarte?"
+        statusMessage=""
+        placeholder="Escribe un mensaje..."
+        avatar={logo}
+      />
     </>
   )
 }

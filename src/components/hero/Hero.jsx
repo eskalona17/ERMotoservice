@@ -9,12 +9,12 @@ const Hero = () => {
           <h1 className="text-primary-700 text-xl text-gray-800 font-extrabold md:text-2xl lg:text-5xl uppercase">
             Transporte de motos
           </h1>
-          <p className="text-primary-500 max-w-60 md:text-lg">
+          <h2 className="text-primary-500 max-w-60 md:text-lg">
             Llevamos tu moto a cualquier parte de España
-          </p>
+          </h2>
           <a
             href=""
-            className="mt-3 flex w-fit items-center rounded-md border border-transparent bg-primary-600 px-7 py-2 text-primary-50 font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+            className="mt-3 flex w-fit items-center rounded-md border border-transparent bg-primary-600 px-5 py-2 text-primary-50 font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
           >
             CONTACTA
           </a>
