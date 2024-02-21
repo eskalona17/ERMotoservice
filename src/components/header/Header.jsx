@@ -1,65 +1,67 @@
-import React, { useState, useEffect } from "react"
-import { navbarItems } from "../../assets/data/data"
-import HeaderItem from "./HeaderItem"
-import logo from "../../assets/img/logo.png"
-import logoMobile from "../../assets/img/logoMobile.png"
+import React, { useState, useEffect } from "react";
+import { navbarItems } from "../../assets/data/data";
+import HeaderItem from "./HeaderItem";
+import logo from "../../assets/img/logo.png";
+import logoMobile from "../../assets/img/logoMobile.png";
 
 const Header = () => {
-  const [showMenu, setShowMenu] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [prevScrollY, setPrevScrollY] = useState(0)
+  const [showMenu, setShowMenu] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [prevScrollY, setPrevScrollY] = useState(0);
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu)
-  }
-
-  const handleScroll = () => {
-    const scrollTop = window.scrollY
-    setIsScrolled(scrollTop > 0)
-    // Determinar la dirección del scroll
-    setPrevScrollY(scrollTop)
-  }
-
+    setShowMenu(!showMenu);
+  };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+    setPrevScrollY(window.scrollY);
+  }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const isScrollingUp = prevScrollY > scrollTop;
+  
+      setIsScrolled(scrollTop > 0 && isScrollingUp);
+      setPrevScrollY(scrollTop);
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollY, isScrolled]);
+  
 
 
   const handleSmoothScroll = (event, sectionId) => {
-    event.preventDefault()
-    const targetSection = document.getElementById(sectionId)
+    event.preventDefault();
+    const targetSection = document.getElementById(sectionId);
     if (targetSection) {
-      const targetOffset = targetSection.offsetTop
-  
+      const targetOffset = targetSection.offsetTop;
+
       window.scrollTo({
         top: targetOffset,
         behavior: 'smooth',
-      })
+      });
 
-      // Cerrar el menú si está abierto (opcional)
-      setShowMenu(false)
+      setShowMenu(false);
     }
-  }
+  };
 
-  const handleLogoClick = () => {
+  const handleLogoClick = (e) => {
+    e.preventDefault()
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
-    })
-  }
-
-    // Determinar si el usuario está haciendo scroll hacia arriba o hacia abajo
-    const isScrollingUp = prevScrollY < window.scrollY
+      behavior: 'smooth',
+    });
+  };
 
   return (
-    <section id="home"
+    <section
+      id="home"
       className={`w-full z-30 transition-all duration-300 ${
-        isScrolled && !isScrollingUp ? "fixed bg-secondary-50 opacity-90 shadow-lg" : ""
+        isScrolled ? "fixed bg-secondary-50 opacity-90 shadow-lg" : ""
       }`}
     >
       <nav
@@ -69,17 +71,17 @@ const Header = () => {
       >
         {/* Logo */}
         <div className={`flex items-center ${showMenu ? "hidden" : ""}`}>
-          <a href="#home" onClick={handleLogoClick}>
-          <img
-            src={logoMobile}
-            className={`block lg:hidden`}
-            alt="Logo ERmotoservice"
-          />
-          <img
-            src={logo}
-            className={`hidden lg:block`}
-            alt="Logo ERmotoservice"
-          />
+          <a href="#home" onClick={(e) => handleLogoClick(e)}>
+            <img
+              src={logoMobile}
+              className={`block lg:hidden`}
+              alt="Logo ERmotoservice"
+            />
+            <img
+              src={logo}
+              className={`hidden lg:block`}
+              alt="Logo ERmotoservice"
+            />
           </a>
         </div>
 
@@ -134,13 +136,18 @@ const Header = () => {
             }`}
           >
             {navbarItems.map((item) => (
-              <HeaderItem key={item.id} id={item.id} link={item.link} onClick={(e) => handleSmoothScroll(e, item.id)} />
+              <HeaderItem
+                key={item.id}
+                id={item.id}
+                link={item.link}
+                onClick={(e) => handleSmoothScroll(e, item.id)}
+              />
             ))}
           </ul>
         </div>
       </nav>
     </section>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
