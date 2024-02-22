@@ -9,7 +9,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   @apply max-w-[1920px] mx-auto;
-
+  scroll-behavior: smooth;
 }
 
 #root {

@@ -60,7 +60,7 @@ const Header = () => {
   return (
     <section
       id="home"
-      className={`w-full z-30 transition-all duration-300 ${
+      className={`w-full z-30 scroll-smooth transition-all duration-500 ease-in-out ${
         isScrolled ? "fixed bg-secondary-50 opacity-90 shadow-lg" : ""
       }`}
     >

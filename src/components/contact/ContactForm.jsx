@@ -81,7 +81,7 @@ const ContactForm = () => {
             {...field}
             type="text"
             placeholder="Nombre"
-            className="w-64 border-b border-secondary-300"
+            className="w-64 border-b border-secondary-300 focus:outline-none"
           />
         )}
       />
@@ -94,7 +94,7 @@ const ContactForm = () => {
             {...field}
             type="email"
             placeholder="Email"
-            className="w-64 border-b border-secondary-300"
+            className="w-64 border-b border-secondary-300 focus:outline-none"
           />
         )}
       />
@@ -106,7 +106,7 @@ const ContactForm = () => {
           <textarea
             {...field}
             placeholder="Mensaje"
-            className="bg-cyan-700 border-b border-secondary-300"
+            className="bg-cyan-700 border-b border-secondary-300 focus:outline-none"
           />
         )}
       />
