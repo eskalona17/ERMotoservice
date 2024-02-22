@@ -7,7 +7,7 @@ const AboutItem = ({ image, description, flexDirection, alt }) => {
     `}>
       
         <div className='w-full lg:w-7/12'>
-          <img src={image} className='object-fit w-full hover:reflect_right' loading='lazy' alt={alt} />
+          <img src={import.meta.env.BASE_URL + image} className='object-fit w-full hover:reflect_right' loading='lazy' alt={alt} />
 
         </div>
       <p className='text-secondary-800 px-10 mt-3 lg:mt-0 lg:p-0 lg:w-5/12 lg:mx-32 xl:mx-48'>{description}</p>
