@@ -6,7 +6,7 @@ import About from "./components/about/About"
 import Contact from "./components/contact/Contact"
 import Footer from "./components/footer/Footer"
 import { FloatingWhatsApp } from "react-floating-whatsapp"
-import logo from "./assets/img/logo.png"
+import logo from "./assets/img/logo_movil_blanco.png"
 
 const App = () => {
   return (

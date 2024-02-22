@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { navbarItems } from "../../assets/data/data";
 import HeaderItem from "./HeaderItem";
-import logo from "../../assets/img/logo.png";
-import logoMobile from "../../assets/img/logoMobile.png";
+import logo from "../../assets/img/logo_transparente.png";
+import logoMobile from "../../assets/img/logo_movil_transparente.png";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -74,12 +74,12 @@ const Header = () => {
           <a href="#home" onClick={(e) => handleLogoClick(e)}>
             <img
               src={logoMobile}
-              className={`block lg:hidden`}
+              className={`block lg:hidden w-16`}
               alt="Logo ERmotoservice"
             />
             <img
               src={logo}
-              className={`hidden lg:block`}
+              className={`hidden lg:block w-32`}
               alt="Logo ERmotoservice"
             />
           </a>
@@ -127,7 +127,7 @@ const Header = () => {
         <div className={`md:flex ${showMenu ? 'block' : 'hidden'}`}>
           <img
             src={logoMobile}
-            className={`block md:hidden`}
+            className={`block md:hidden w-16`}
             alt="Logo ERmotoservice"
           />
           <ul
