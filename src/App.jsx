@@ -7,6 +7,7 @@ import Contact from "./components/contact/Contact"
 import Footer from "./components/footer/Footer"
 import { FloatingWhatsApp } from "react-floating-whatsapp"
 import logo from "./assets/img/logo_movil_blanco.png"
+import CookiesBanner from "./components/cookiesBanner/CookiesBanner"
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         placeholder="Escribe un mensaje..."
         avatar={logo}
       />
+      <CookiesBanner />
     </>
   )
 }
