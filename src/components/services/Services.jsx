@@ -7,7 +7,7 @@
 
   const Services = () => {
     return (
-      <section id="services" className="custom-screen flex flex-row overflow-x-auto space-x-4 lg:justify-center">
+      <section id="services" className="custom-screen flex flex-row overflow-x-auto lg:justify-center">
         {data.map((item) => (
           <ServicesItem key={item.id} {...item} icon={renderIcon(item.icon, "#215a83", 40)}/>
         ))}

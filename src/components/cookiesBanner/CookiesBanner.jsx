@@ -19,13 +19,13 @@ const CookieBanner = () => {
 
   return (
     <div
-      className={`fixed bottom-0 w-9/12 lg:w-full bg-secondary-200 text-white p-4 ${
+      className={`fixed bottom-0 w-8/12 lg:w-full bg-secondary-200 text-white p-4 ${
         showBanner ? "block" : "hidden"
       }`}
     >
-      <div className="max-w-screen-xl mx-auto flex justify-between items-center">
-        <p className="text-sm">
-          Este sitio usa cookies y tecnologías similares. Si no cambia la
+      <div className="max-w-screen-xl mx-auto flex flex-col justify-between items-center">
+        <p className="text-sm mb-5">
+          Este sitio usa cookies de análisis necesarias para la mejora del sitio. Si no cambia la
           configuración de su navegador, usted acepta su uso. Lea nuestra <a href="/politica-de-cookies" className="text-blue-400 underline">política de cookies</a>.
         </p>
         <button
