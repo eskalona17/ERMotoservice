@@ -1,4 +1,3 @@
-import { GoogleReCaptchaProvider, GoogleReCaptcha } from "react-google-recaptcha-v3"
 import { MdMailOutline } from "react-icons/md"
 import { FaPhone } from "react-icons/fa6"
 import ContactForm from "./ContactForm"
@@ -6,7 +5,6 @@ import ContactForm from "./ContactForm"
 const Contact = () => {
 
   return (
-    <GoogleReCaptchaProvider reCaptchaKey={import.meta.env.RECAPTCHA_KEY}>
       <section id="contact" className="custom-screen flex flex-col items-start md:flex-row-reverse justify-evenly py-4 w-full gap-10">
         <div className="flex flex-col w-full items-center justify-center">
           <div className="mb-16 text-center">
@@ -37,7 +35,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </GoogleReCaptchaProvider>
   )
 }
 

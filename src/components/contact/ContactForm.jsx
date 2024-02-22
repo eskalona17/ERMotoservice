@@ -1,127 +1,122 @@
-import React, { useRef, useState } from "react"
-import emailjs from "@emailjs/browser"
-import { useForm, Controller } from "react-hook-form"
-import { GoogleReCaptchaProvider, GoogleReCaptcha } from "react-google-recaptcha-v3"
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
-  const { handleSubmit, control, reset } = useForm()
-  const form = useRef()
+  const form = useRef();
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [errors, setErrors] = useState({
+    user_name: "",
+    user_email: "",
+    message: "",
+  });
 
-  const [token, setToken] = useState("")
-
-  const setTokenFunc = (getToken) => {
-    setToken(getToken)
-  }
-
-  const emailJsSubmit = async () => {
-    // Validar el captcha
-    if (!token) {
-      console.error("Por favor, complete el captcha.")
-      return
+  const sendEmail = (e) => {
+    e.preventDefault();
+  
+    const formElement = form.current;
+  
+    const errorsCopy = { ...errors };
+  
+    if (!formElement.user_name.value.trim()) {
+      errorsCopy.user_name = "Por favor, ingrese su nombre.";
+    } else {
+      errorsCopy.user_name = "";
     }
-
+  
+    if (!formElement.user_email.value.trim()) {
+      errorsCopy.user_email = "Por favor, ingrese su dirección de correo electrónico.";
+    } else {
+      errorsCopy.user_email = "";
+    }
+  
+    if (!formElement.message.value.trim()) {
+      errorsCopy.message = "Por favor, ingrese su mensaje.";
+    } else {
+      errorsCopy.message = "";
+    }
+  
+    setErrors(errorsCopy);
+  
+    if (Object.values(errorsCopy).some((error) => error !== "")) {
+      return;
+    }
+  
     emailjs
-      .sendForm(
-        import.meta.env.EMAILJS_SERVICE_KEY,
-        import.meta.env.EMAILJS_TEMPLATE_KEY,
-        form.current,
-        {
-          publicKey: import.meta.env.EMAILJS_PUBLIC_KEY,
-          recaptchaValue: token,
-        }
-      )
+      .sendForm("service_rt3zfam", "template_vyij7pq", formElement, {
+        publicKey: "RrFjtni53h12EAKQU",
+      })
       .then(
         () => {
-          console.log(
-            "Correo electrónico enviado con éxito a través de Email.js"
-          )
+          console.log("SUCCESS!");
+          setIsSuccess(true);
+          setTimeout(() => {
+            setIsSuccess(false);
+          }, 5000); // Hide success message after 3 seconds
+  
+          // Reset the form fields
+          formElement.reset();
         },
         (error) => {
-          console.log(
-            "Fallo en el envío del correo electrónico a través de Email.js:",
-            error.text
-          )
+          console.log("FAILED...", error.text);
         }
-      )
-  }
+      );
+  };
+  
+  
 
-  const onSubmit = async (data) => {
-    try {
-      // Validar que los campos no estén vacíos
-      if (!data.name || !data.email || !data.message) {
-        console.error("Por favor, complete todos los campos del formulario.")
-        return
-      }
-
-      // Puedes agregar aquí la lógica para enviar el correo electrónico con react-hook-form
-      console.log("Datos del formulario:", data)
-
-      // Envía el correo electrónico utilizando Email.js
-      await emailJsSubmit()
-
-      // Reinicia el formulario después del envío exitoso
-      reset()
-    } catch (error) {
-      console.error("Error al enviar el formulario:", error)
-    }
-  }
   return (
     <form
       ref={form}
       method="POST"
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={sendEmail}
       className="flex flex-col gap-y-5 w-9/12 lg:w-5/12"
     >
-      <Controller
-        name="name"
-        control={control}
-        defaultValue=""
-        render={({ field }) => (
-          <input
-            {...field}
-            type="text"
-            placeholder="Nombre"
-            className="w-64 border-b border-secondary-300 focus:outline-none"
-          />
-        )}
+      <input
+        type="text"
+        placeholder="Nombre"
+        name="user_name"
+        className={`w-64 border-b border-secondary-300 focus:outline-none text-secondary-900 ${
+          errors.user_name ? 'text-sm text-error-500' : ''
+        }`}
       />
-      <Controller
-        name="email"
-        control={control}
-        defaultValue=""
-        render={({ field }) => (
-          <input
-            {...field}
-            type="email"
-            placeholder="Email"
-            className="w-64 border-b border-secondary-300 focus:outline-none"
-          />
-        )}
+      {errors.user_name && (
+        <p className="text-sm text-error-500">{errors.user_name}</p>
+      )}
+
+      <input
+        type="email"
+        placeholder="Email"
+        name="user_email"
+        className={`w-64 border-b border-secondary-300 focus:outline-none text-secondary-900 ${
+          errors.user_email ? 'text-sm text-error-500' : ''
+        }`}
       />
-      <Controller
+      {errors.user_email && (
+        <p className="text-sm text-error-500">{errors.user_email}</p>
+      )}
+
+      <textarea
+        placeholder="Mensaje"
         name="message"
-        control={control}
-        defaultValue=""
-        render={({ field }) => (
-          <textarea
-            {...field}
-            placeholder="Mensaje"
-            className="bg-cyan-700 border-b border-secondary-300 focus:outline-none"
-          />
-        )}
+        className={`bg-cyan-700 border-b border-secondary-300 focus:outline-none text-secondary-900 ${
+          errors.message ? 'text-sm text-error-500' : ''
+        }`}
       />
-      <GoogleReCaptcha
-        className="google-recaptcha-custom-class"
-        onVerify={setTokenFunc}
-      />
-      <button
+      {errors.message && (
+        <p className="text-sm text-error-500">{errors.message}</p>
+      )}
+
+      <input
         type="submit"
         className="mt-3 flex w-fit items-center self-center justify-center rounded-md border border-transparent bg-primary-600 px-5 py-2 text-primary-50 font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-      >
-        ENVIAR
-      </button>
-    </form>
-  )
-}
+        value="Enviar"
+      />
 
-export default ContactForm
+      {isSuccess && (
+        <p className="text-success-500 mt-3">¡El correo electrónico se ha enviado con éxito!</p>
+      )}
+    </form>
+  );
+};
+
+export default ContactForm;
