@@ -1,6 +1,6 @@
 import React from "react"
-import motosHeroImage  from "../../assets/img/motos_hero.webp"
-import motosHeroMobile  from "../../assets/img/moto_mobile_hero.webp"
+import motosHeroImage  from "../../../public/img/motos_hero.webp"
+import motosHeroMobile  from "../../../public/img/moto_mobile_hero.webp"
 
 const Hero = () => {
 

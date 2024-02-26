@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import ReactGA from 'react-ga';
 
 const ContactForm = () => {
   const form = useRef();
@@ -16,6 +17,11 @@ const ContactForm = () => {
     const formElement = form.current;
   
     const errorsCopy = { ...errors };
+
+    ReactGA.event({
+      category: 'User',
+      action: 'Click en botón de contacto'
+    });
   
     if (!formElement.user_name.value.trim()) {
       errorsCopy.user_name = "Por favor, ingrese su nombre.";

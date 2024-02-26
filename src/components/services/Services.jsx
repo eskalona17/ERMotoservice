@@ -1,6 +1,6 @@
   import React from "react"
   import ServicesItem from "../services/ServicesItem"
-  import { data } from "../../assets/data/data"
+  import { data } from "../../assets/data"
   import { LuShieldCheck } from "react-icons/lu"
   import { FaRegHandshake } from "react-icons/fa6"
   import { PiTruck } from "react-icons/pi"

@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import "./App.css"
 import Header from "./components/header/Header"
 import Hero from "./components/hero/Hero"
@@ -6,10 +7,17 @@ import About from "./components/about/About"
 import Contact from "./components/contact/Contact"
 import Footer from "./components/footer/Footer"
 import { FloatingWhatsApp } from "react-floating-whatsapp"
-import logo from "./assets/img/logo_movil_blanco.png"
+import logo from "../public/img/logo_movil_blanco.png"
 import CookiesBanner from "./components/cookiesBanner/CookiesBanner"
+import ReactGA from 'react-ga'
+ReactGA.initialize('G-VMFZLGRLY1')
 
 const App = () => {
+
+  useEffect(() => {
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname })
+  }, [])
+
   return (
     <>
       <header>

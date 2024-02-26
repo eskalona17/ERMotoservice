@@ -1,9 +1,7 @@
 import React from "react"
-import { about } from "../../assets/data/data"
-import AboutItem from "./AboutItem"
-import MotoAbout1 from "../../assets/img/detalle_furgo.webp"
-import MotoAbout2 from "../../assets/img/moto_paisaje.webp"
-import MotoAbout3 from "../../assets/img/furgo1.webp"
+import MotoAbout1 from "../../../public/img/detalle_furgo.webp"
+import MotoAbout2 from "../../../public/img/moto_paisaje.webp"
+import MotoAbout3 from "../../../public/img/furgo1.webp"
 import { PiMotorcycleFill } from "react-icons/pi";
 
 const About = () => {
@@ -12,13 +10,6 @@ const About = () => {
       id="about"
       className="my-12 lg:my-24 bg-gradient-to-b from-secondary-50 via-secondary-100 to-secondary-100 lg:border-secondary-300"
     >
-      {/* {about.map((item, index) => (
-          <AboutItem 
-          key={item.id} 
-          {...item}
-          flexDirection={getStyleForIndex(index)}
-           />
-        ))} */}
       <div
         className={`flex flex-col lg:flex-row
     items-center w-full pb-10 lg:pb-0 lg:border-secondary-300 lg:hover:bg-secondary-200

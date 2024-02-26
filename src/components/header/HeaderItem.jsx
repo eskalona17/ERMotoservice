@@ -5,7 +5,7 @@ const HeaderItem = ({ id, link, onClick }) => {
     <li>
       <a
         href={`#${id}`} 
-        className="text-primary-500 font-semibold cursor-pointer hover:text-primary-400"
+        className="text-primary-500 font-semibold cursor-pointer hover:text-primary-400 focus:outline-none"
         onClick={onClick}  
       >
         {link}

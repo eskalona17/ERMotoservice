@@ -16,7 +16,7 @@ const Footer = () => {
           </span>
           <p>{currentYear} ERMotoservice</p>
         </div>
-        <p>Made with love by Fernando Escalona</p>
+        <p>Made with love by <a href="https://www.linkedin.com/in/fernandoescalonalonso/" rel="nofollow noopener noreferrer" target="_blank" className="cursor-pointer focus:outline-none">Fernando Escalona</a></p>
       </div>
     </section>
   ) 

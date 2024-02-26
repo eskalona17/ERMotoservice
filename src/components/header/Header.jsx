@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { navbarItems } from "../../assets/data/data";
+import { navbarItems } from "../../assets/data";
 import HeaderItem from "./HeaderItem";
-import logo from "../../assets/img/logo_transparente.png";
-import logoMobile from "../../assets/img/logo_movil_transparente.png";
+import logo from "../../../public/img/logo_transparente.png";
+import logoMobile from "../../../public/img/logo_movil_transparente.png";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -71,7 +71,7 @@ const Header = () => {
       >
         {/* Logo */}
         <div className={`flex items-center ${showMenu ? "hidden" : ""}`}>
-          <a href="#home" onClick={(e) => handleLogoClick(e)}>
+          <a href="#home focus:outline-none" onClick={(e) => handleLogoClick(e)}>
             <img
               src={logoMobile}
               className={`block lg:hidden w-16`}
