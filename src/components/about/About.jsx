@@ -1,9 +1,10 @@
-import React from "react";
-import { about } from "../../assets/data/data";
-import AboutItem from "./AboutItem";
-import MotoAbout1 from "../../assets/img/detalle_furgo.webp";
-import MotoAbout2 from "../../assets/img/moto_paisaje.webp";
-import MotoAbout3 from "../../assets/img/furgo1.webp";
+import React from "react"
+import { about } from "../../assets/data/data"
+import AboutItem from "./AboutItem"
+import MotoAbout1 from "../../assets/img/detalle_furgo.webp"
+import MotoAbout2 from "../../assets/img/moto_paisaje.webp"
+import MotoAbout3 from "../../assets/img/furgo1.webp"
+import { PiMotorcycleFill } from "react-icons/pi";
 
 const About = () => {
   return (
@@ -31,12 +32,19 @@ const About = () => {
             alt="detalle de furgoneta"
           />
         </div>
-        <p className="text-secondary-800 px-10 mt-3 lg:mt-0 lg:p-0 lg:w-5/12 lg:mx-32 xl:mx-48">
-          En ERMotoservice, no solo transportamos motos, sino que llevamos
-          consigo años de experiencia y amor por el mundo de las dos ruedas.
-          Nuestra dedicación se refleja en cada viaje que realizamos, ofreciendo
-          una atención personalizada que va más allá de tus expectativas.
-        </p>
+        <ul className="list-none space-y-5 text-secondary-800 px-7 mt-3 lg:mt-0 lg:p-0 lg:w-5/12 lg:mx-32 xl:mx-48">
+          <li className="flex">
+            <PiMotorcycleFill size={24} className="w-2/12" style={{ color: "#378dc0" }} />
+            <span className="w-full">En ERMotoservice, no solo transportamos motos, sino que llevamos
+            consigo años de experiencia y amor por el mundo de las dos ruedas.</span>
+          </li>
+          <li className="flex">
+            <PiMotorcycleFill size={24} className="w-2/12" style={{ color: "#378dc0" }} />
+            <span className="w-full">Nuestra dedicación se refleja en cada viaje que realizamos,
+            ofreciendo una atención personalizada que va más allá de tus
+            expectativas.</span>
+          </li>
+        </ul>
       </div>
       <div
         className={`flex flex-col lg:flex-row-reverse
@@ -51,12 +59,20 @@ const About = () => {
             alt="moto en carretera"
           />
         </div>
-        <p className="text-secondary-800 px-10 mt-3 lg:mt-0 lg:p-0 lg:w-5/12 lg:mx-32 xl:mx-48">
-          En ERMotoservice, no solo transportamos motos, sino que llevamos
-          consigo años de experiencia y amor por el mundo de las dos ruedas.
-          Nuestra dedicación se refleja en cada viaje que realizamos, ofreciendo
-          una atención personalizada que va más allá de tus expectativas.
-        </p>
+        <ul className="list-none space-y-5 text-secondary-800 px-7 mt-3 lg:mt-0 lg:p-0 lg:w-5/12 lg:mx-32 xl:mx-48">
+          <li className="flex">
+            <PiMotorcycleFill size={24} className="w-2/12" style={{ color: "#378dc0" }} />
+            <span className="w-full">Con una sólida trayectoria en el transporte de motos, hemos
+            perfeccionado cada detalle para asegurarnos de que tu moto llegue a
+            su destino en las mejores condiciones posibles.</span>
+          </li>
+          <li className="flex">
+            <PiMotorcycleFill size={24} className="w-2/12" style={{ color: "#378dc0" }} />
+            <span className="w-full">Cada miembro de nuestro equipo comparte la misma pasión que tú,
+            garantizando una experiencia de transporte que va más allá de lo
+            ordinario.</span>
+          </li>
+        </ul>
       </div>
       <div
         className={`flex flex-col lg:flex-row
@@ -71,15 +87,22 @@ const About = () => {
             alt="detalle de furgoneta"
           />
         </div>
-        <p className="text-secondary-800 px-10 mt-3 lg:mt-0 lg:p-0 lg:w-5/12 lg:mx-32 xl:mx-48">
-          En ERMotoservice, no solo transportamos motos, sino que llevamos
-          consigo años de experiencia y amor por el mundo de las dos ruedas.
-          Nuestra dedicación se refleja en cada viaje que realizamos, ofreciendo
-          una atención personalizada que va más allá de tus expectativas.
-        </p>
+        <ul className="list-none space-y-5 text-secondary-800 px-7 mt-3 lg:mt-0 lg:p-0 lg:w-5/12 lg:mx-32 xl:mx-48">
+          <li className="flex">
+            <PiMotorcycleFill size={24} className="w-2/12" style={{ color: "#378dc0" }} />
+            <span className="w-full">Entendemos que tu moto es más que un medio de transporte es una
+            extensión de tu estilo de vida.</span>
+          </li>
+          <li className="flex">
+            <PiMotorcycleFill size={24} className="w-2/12" style={{ color: "#378dc0" }} />
+            <span className="w-full">Ofrecemos servicios exclusivos diseñados para satisfacer tus
+            necesidades específicas, segurándonos de que tu moto reciba el trato
+            que se merece.</span>
+          </li>
+        </ul>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default About;
+export default About
