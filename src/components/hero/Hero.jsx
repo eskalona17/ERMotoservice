@@ -35,13 +35,13 @@ const Hero = () => {
         </div>
         <div className="relative">
             <img
-              className="h-auto max-w-full rounded-lg sm:hidden"
+              className="h-auto max-w-full rounded-lg sm:hidden aspect-auto"
               loading="lazy"
               src={motosHeroMobile}
               alt="transporte moto"
             />
             <img
-              className="h-auto max-w-full rounded-lg hidden sm:block"
+              className="h-auto max-w-full rounded-lg hidden sm:block aspect-auto"
               loading="lazy"
               src={motosHeroImage}
               alt="transporte moto"

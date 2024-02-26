@@ -18,7 +18,7 @@ const About = () => {
         <div className="w-full lg:w-7/12">
           <img
             src={MotoAbout1}
-            className="object-fit w-full hover:reflect_right"
+            className="object-fit w-full hover:reflect_right aspect-auto"
             loading="lazy"
             alt="detalle de furgoneta"
           />
@@ -45,7 +45,7 @@ const About = () => {
         <div className="w-full lg:w-7/12">
           <img
             src={MotoAbout2}
-            className="object-fit w-full hover:reflect_right"
+            className="object-fit w-full hover:reflect_right aspect-auto"
             loading="lazy"
             alt="moto en carretera"
           />
@@ -73,7 +73,7 @@ const About = () => {
         <div className="w-full lg:w-7/12">
           <img
             src={MotoAbout3}
-            className="object-fit w-full hover:reflect_right"
+            className="object-fit w-full hover:reflect_right aspect-auto"
             loading="lazy"
             alt="detalle de furgoneta"
           />
