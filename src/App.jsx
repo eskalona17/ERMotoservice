@@ -9,7 +9,7 @@ import Footer from "./components/footer/Footer"
 import { FloatingWhatsApp } from "react-floating-whatsapp"
 import logo from "../public/img/logo_movil_blanco.png"
 import CookiesBanner from "./components/cookiesBanner/CookiesBanner"
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 ReactGA.initialize('G-VMFZLGRLY1')
 
 const App = () => {

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 const ContactForm = () => {
   const form = useRef();
