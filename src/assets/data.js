@@ -45,17 +45,13 @@ export const data = [
 export const about = [
   {
     id: 1,
-    image: "src/assets/img/detalle_furgo.webp",
-    description: `En ERMotoservice, no solo transportamos motos, 
-    sino que llevamos consigo años de experiencia y amor por el 
-    mundo de las dos ruedas. Nuestra dedicación se refleja en cada viaje 
-    que realizamos, ofreciendo una atención personalizada que va más allá 
-    de tus expectativas.`,
+    image: "public/img/detalle_furgo.webp",
+    description: `En ERMotoservice, no solo transportamos motos, sino que llevamos consigo años de experiencia y amor por el mundo de las dos ruedas. Nuestra dedicación se refleja en cada viaje que realizamos, ofreciendo una atención personalizada que va más allá de tus expectativas.`,
     alt:'detalle de furgoneta'
   },
   {
     id: 2,
-    image: "src/assets/img/moto_paisaje.webp",
+    image: "public/img/moto_paisaje.webp",
     description: `Con una sólida trayectoria en el transporte de motos, 
     hemos perfeccionado cada detalle para asegurarnos de que tu moto llegue 
     a su destino en las mejores condiciones posibles. Cada miembro de nuestro
@@ -65,7 +61,7 @@ export const about = [
   },
   {
     id: 3,
-    image: "src/assets/img/furgo1.webp",
+    image: "public/img/furgo1.webp",
     description: `Entendemos que tu moto es más que un medio de 
     transporte; es una extensión de tu estilo de vida. Ofrecemos 
     servicios exclusivos diseñados para satisfacer tus necesidades específicas, 

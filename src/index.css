@@ -21,11 +21,11 @@ body {
 
 
 @layer utilities {
-  .reflect_right {
+  .reflect-right {
     -webkit-box-reflect: right 0px linear-gradient(to right, rgba(0,0,0,0.0), rgba(0,0,0,0.1));
   }
 
-  .reflect_left {
+  .reflect-left {
     -webkit-box-reflect: left 0px linear-gradient(to left, rgba(0,0,0,0.0), rgba(0,0,0,0.1));
   }
 }

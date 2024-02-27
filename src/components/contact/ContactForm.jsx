@@ -104,7 +104,7 @@ const ContactForm = () => {
       <textarea
         placeholder="Mensaje"
         name="message"
-        className={`bg-cyan-700 border-b border-secondary-300 focus:outline-none text-secondary-900 ${
+        className={`border-b border-secondary-300 focus:outline-none text-secondary-900 ${
           errors.message ? 'text-sm text-error-500' : ''
         }`}
       />
