@@ -6,64 +6,64 @@ import logoMobile from "../../../public/img/logo_movil_transparente.png"
 import { useNavigate, useLocation } from "react-router-dom"
 
 const Header = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [prevScrollY, setPrevScrollY] = useState(0);
+  const [showMenu, setShowMenu] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [prevScrollY, setPrevScrollY] = useState(0)
 
-  const navigate = useNavigate();
-  const location = useLocation();
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
+    setShowMenu(!showMenu)
+  }
 
   useEffect(() => {
-    setPrevScrollY(window.scrollY);
-  }, []);
+    setPrevScrollY(window.scrollY)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const isScrollingUp = prevScrollY > scrollTop;
-  
-      setIsScrolled(scrollTop > 0 && isScrollingUp);
-      setPrevScrollY(scrollTop);
-    };
-  
-    window.addEventListener("scroll", handleScroll);
+      const scrollTop = window.scrollY
+      const isScrollingUp = prevScrollY > scrollTop
+
+      setIsScrolled(scrollTop > 0 && isScrollingUp)
+      setPrevScrollY(scrollTop)
+    }
+
+    window.addEventListener("scroll", handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [prevScrollY, isScrolled]);
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [prevScrollY, isScrolled])
 
   const handleSmoothScroll = (event, sectionId) => {
-    event.preventDefault();
-    const targetSection = document.getElementById(sectionId);
+    event.preventDefault()
+    const targetSection = document.getElementById(sectionId)
     if (targetSection) {
-      const targetOffset = targetSection.offsetTop;
+      const targetOffset = targetSection.offsetTop
 
       window.scrollTo({
         top: targetOffset,
         behavior: "smooth",
-      });
+      })
 
-      setShowMenu(false);
+      setShowMenu(false)
     }
-  };
+  }
 
   const handleLogoClick = (e) => {
-    e.preventDefault();
-    const isHomePage = location.pathname === "/";
+    e.preventDefault()
+    const isHomePage = location.pathname === "/"
 
     isHomePage
       ? window.scrollTo({
-      top: 0,
+          top: 0,
           behavior: "smooth",
         })
-      : navigate("/");
+      : navigate("/")
 
-    setShowMenu(false);
-  };
+    setShowMenu(false)
+  }
 
   return (
     <section
@@ -98,45 +98,46 @@ const Header = () => {
         </div>
 
         {/* Menú de hamburguesa */}
-        <div className="md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-black focus:outline-none focus:text-white"
-          >
-            {showMenu ? (
-              <svg
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="h-6 w-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                ></path>
-              </svg>
-            ) : (
-              <svg
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="h-6 w-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                ></path>
-              </svg>
-            )}
-          </button>
-        </div>
-
+        {location.pathname === "/" && (
+          <div className="md:hidden">
+            <div
+              onClick={toggleMenu}
+              className="text-black cursor-pointer focus:outline-none focus:text-white"
+            >
+              {showMenu ? (
+                <svg
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              ) : (
+                <svg
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  ></path>
+                </svg>
+              )}
+            </div>
+          </div>
+        )}
         {/* Menú de navegación */}
-        <div className={`md:flex ${showMenu ? 'block' : 'hidden'}`}>
+        <div className={`md:flex ${showMenu ? "block" : "hidden"}`}>
           <img
             src={logoMobile}
             className={`block md:hidden w-16`}
@@ -159,7 +160,7 @@ const Header = () => {
         </div>
       </nav>
     </section>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
