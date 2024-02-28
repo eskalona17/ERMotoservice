@@ -4,7 +4,7 @@ const Privacidad = () => {
   return (
     <section className="custom-screen space-y-5">
       <h1 className="text-2xl text-center text-primary-700 font-semibold">
-        Politica de privacidad
+        Política de privacidad
       </h1>
       <p className="text-secondary-800">
         ERMOTOSERVICE, S.L., como responsable del presente Sitio web y en

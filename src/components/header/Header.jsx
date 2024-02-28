@@ -137,6 +137,8 @@ const Header = () => {
           </div>
         )}
         {/* Menú de navegación */}
+        {location.pathname === "/" && (
+
         <div className={`md:flex ${showMenu ? "block" : "hidden"}`}>
           <img
             src={logoMobile}
@@ -158,6 +160,7 @@ const Header = () => {
             ))}
           </ul>
         </div>
+        )}
       </nav>
     </section>
   )
