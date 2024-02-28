@@ -19,7 +19,7 @@ const Footer = () => {
               </span>
               <p>{currentYear} ERMotoservice</p>
             </div>
-            <div className="flex flex-col md:flex md:space-x-5">
+            <div className="flex flex-col md:flex-row md:space-x-5">
               <Link to="/aviso-legal">Aviso Legal</Link>
               <Link to="/politica-cookies">Política de Cookies</Link>
               <Link to="/politica-privacidad">Política de Privacidad</Link>

@@ -26,7 +26,7 @@ const CookieBanner = () => {
       <div className="max-w-screen-xl mx-auto flex flex-col justify-between items-center">
         <p className="text-sm mb-5">
           Este sitio usa cookies de análisis necesarias para la mejora del sitio. Si no cambia la
-          configuración de su navegador, usted acepta su uso. Lea nuestra <a href="/politica-de-cookies" className="text-blue-400 underline">política de cookies</a>.
+          configuración de su navegador, usted acepta su uso. Lea nuestra <a href="/politica-cookies" className="text-blue-400 underline">política de cookies</a>.
         </p>
         <button
           onClick={handleAccept}
