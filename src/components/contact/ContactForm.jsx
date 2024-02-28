@@ -1,50 +1,50 @@
-import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
-import ReactGA from 'react-ga4';
+import React, { useRef, useState } from "react"
+import emailjs from "@emailjs/browser"
+import ReactGA from 'react-ga4'
 
 const ContactForm = () => {
-  const form = useRef();
-  const [isSuccess, setIsSuccess] = useState(false);
+  const form = useRef()
+  const [isSuccess, setIsSuccess] = useState(false)
   const [errors, setErrors] = useState({
     user_name: "",
     user_email: "",
     message: "",
-  });
+  })
 
   const sendEmail = (e) => {
-    e.preventDefault();
+    e.preventDefault()
   
-    const formElement = form.current;
+    const formElement = form.current
   
-    const errorsCopy = { ...errors };
+    const errorsCopy = { ...errors }
 
     ReactGA.event({
       category: 'User',
       action: 'Click en botón de contacto'
-    });
+    })
   
     if (!formElement.user_name.value.trim()) {
-      errorsCopy.user_name = "Por favor, ingrese su nombre.";
+      errorsCopy.user_name = "Por favor, ingrese su nombre."
     } else {
-      errorsCopy.user_name = "";
+      errorsCopy.user_name = ""
     }
   
     if (!formElement.user_email.value.trim()) {
-      errorsCopy.user_email = "Por favor, ingrese su dirección de correo electrónico.";
+      errorsCopy.user_email = "Por favor, ingrese su dirección de correo electrónico."
     } else {
-      errorsCopy.user_email = "";
+      errorsCopy.user_email = ""
     }
   
     if (!formElement.message.value.trim()) {
-      errorsCopy.message = "Por favor, ingrese su mensaje.";
+      errorsCopy.message = "Por favor, ingrese su mensaje."
     } else {
-      errorsCopy.message = "";
+      errorsCopy.message = ""
     }
   
-    setErrors(errorsCopy);
+    setErrors(errorsCopy)
   
     if (Object.values(errorsCopy).some((error) => error !== "")) {
-      return;
+      return
     }
   
     emailjs
@@ -53,20 +53,20 @@ const ContactForm = () => {
       })
       .then(
         () => {
-          console.log("SUCCESS!");
-          setIsSuccess(true);
+          console.log("SUCCESS!")
+          setIsSuccess(true)
           setTimeout(() => {
-            setIsSuccess(false);
-          }, 5000); // Hide success message after 3 seconds
+            setIsSuccess(false)
+          }, 5000) // Hide success message after 3 seconds
   
           // Reset the form fields
-          formElement.reset();
+          formElement.reset()
         },
         (error) => {
-          console.log("FAILED...", error.text);
+          console.log("FAILED...", error.text)
         }
-      );
-  };
+      )
+  }
   
   
 
@@ -122,7 +122,7 @@ const ContactForm = () => {
         <p className="text-success-500 mt-3">¡El correo electrónico se ha enviado con éxito!</p>
       )}
     </form>
-  );
-};
+  )
+}
 
-export default ContactForm;
+export default ContactForm

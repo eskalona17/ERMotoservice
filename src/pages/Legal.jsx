@@ -74,7 +74,7 @@ const Legal = () => {
         <p className="text-secondary-800">
           Igualmente, le informamos de la posibilidad de que ejerza los derechos
           de acceso, rectificación, cancelación y oposición de sus datos de
-          carácter personal, manera gratuita mediante email a info@ERMotoservice
+          carácter personal, manera gratuita mediante email a info@ermotoservice.com
           o en la dirección Avenida Quiñones 2 PORTAL F 3ºB. 28702, San
           Sebastian De Los Reyes (Madrid), España.
         </p>

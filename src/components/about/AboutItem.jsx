@@ -1,11 +1,11 @@
-import React from "react";
-import { PiMotorcycleFill } from "react-icons/pi";
+import React from "react"
+import { PiMotorcycleFill } from "react-icons/pi"
 
 
 const AboutItem = ({ image, description, flexDirection, alt }) => {
   const getSentences = () => {
-    return description.replace(/\s+/g, " ").trim().split(". ");
-  };
+    return description.replace(/\s+/g, " ").trim().split(". ")
+  }
 
   return (
     <article
@@ -32,7 +32,7 @@ const AboutItem = ({ image, description, flexDirection, alt }) => {
           ))}
         </ul>
     </article>
-  );
-};
+  )
+}
 
-export default AboutItem;
+export default AboutItem

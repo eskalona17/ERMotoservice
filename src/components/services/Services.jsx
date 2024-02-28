@@ -26,6 +26,6 @@
       default:
         return null
     }
-  };
+  }
 
   export default Services

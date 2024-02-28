@@ -5,15 +5,15 @@ import motosHeroMobile  from "../../../public/img/moto_mobile_hero.webp"
 const Hero = () => {
 
   const handleButtonContact = (e) => {
-    e.preventDefault();
+    e.preventDefault()
   
-    const contactSection = document.getElementById("contact");
+    const contactSection = document.getElementById("contact")
     if (contactSection) {
       contactSection.scrollIntoView({
         behavior: 'smooth',
-      });
+      })
     }
-  };
+  }
   
 
   return (

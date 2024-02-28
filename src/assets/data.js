@@ -77,7 +77,7 @@ export const about = [
 export const datosEmpresa = {
   denominacionSocial: "ERMOTOSERVICE, S.L.",
   nombreComercial: "ERMOTOSERVICE",
-  domicilioSocial: "Avenida Quiñones 2 PORTAL F 3ºB. 28702, San Sebastian De Los Reyes (Madrid). España.",
+  domicilioSocial: "Avenida Quiñones 2 PORTAL F 3ºB. 28702, San Sebastian De Los Reyes (Madrid), España.",
   Nif: "B-56609985",
   telefono: "+34 639 134 295",
   email: "info@ermotoservice.com",

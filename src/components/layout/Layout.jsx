@@ -1,9 +1,9 @@
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
-import { FloatingWhatsApp } from "react-floating-whatsapp";
-import logo from "../../../public/img/logo_movil_blanco.png";
-import CookiesBanner from "../cookiesBanner/CookiesBanner";
-import { Outlet } from "react-router-dom";
+import Header from "../header/Header"
+import Footer from "../footer/Footer"
+import { FloatingWhatsApp } from "react-floating-whatsapp"
+import logo from "../../../public/img/logo_movil_blanco.png"
+import CookiesBanner from "../cookiesBanner/CookiesBanner"
+import { Outlet } from "react-router-dom"
 
 const Layout = () => {
   return (
@@ -27,7 +27,7 @@ const Layout = () => {
       />
       <CookiesBanner />
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { navbarItems } from "../../assets/data";
-import HeaderItem from "./HeaderItem";
-import logo from "../../../public/img/logo_transparente.png";
-import logoMobile from "../../../public/img/logo_movil_transparente.png";
+import React, { useState, useEffect } from "react"
+import { navbarItems } from "../../assets/data"
+import HeaderItem from "./HeaderItem"
+import logo from "../../../public/img/logo_transparente.png"
+import logoMobile from "../../../public/img/logo_movil_transparente.png"
+import { useNavigate, useLocation } from "react-router-dom"
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -31,8 +35,6 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [prevScrollY, isScrolled]);
-  
-
 
   const handleSmoothScroll = (event, sectionId) => {
     event.preventDefault();
@@ -42,7 +44,7 @@ const Header = () => {
 
       window.scrollTo({
         top: targetOffset,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
 
       setShowMenu(false);
@@ -50,11 +52,17 @@ const Header = () => {
   };
 
   const handleLogoClick = (e) => {
-    e.preventDefault()
-    window.scrollTo({
+    e.preventDefault();
+    const isHomePage = location.pathname === "/";
+
+    isHomePage
+      ? window.scrollTo({
       top: 0,
-      behavior: 'smooth',
-    });
+          behavior: "smooth",
+        })
+      : navigate("/");
+
+    setShowMenu(false);
   };
 
   return (
@@ -71,7 +79,11 @@ const Header = () => {
       >
         {/* Logo */}
         <div className={`flex items-center ${showMenu ? "hidden" : ""}`}>
-          <a href="#home focus:outline-none" onClick={(e) => handleLogoClick(e)}>
+          <a
+            href="#home"
+            className="focus:outline-none"
+            onClick={(e) => handleLogoClick(e)}
+          >
             <img
               src={logoMobile}
               className={`block lg:hidden w-16`}

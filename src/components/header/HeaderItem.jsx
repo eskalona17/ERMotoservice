@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const HeaderItem = ({ id, link, onClick }) => {
   return (
@@ -11,7 +11,7 @@ const HeaderItem = ({ id, link, onClick }) => {
         {link}
       </a>
     </li>
-  );
-};
+  )
+}
 
-export default HeaderItem;
+export default HeaderItem
