@@ -59,9 +59,9 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="custom-screen flex flex-col lg:justify-center"
+      className="custom-screen flex flex-col justify-center overflow-x-auto lg:items-center"
     >
-      <div className="flex flex-row overflow-x-auto pb-4">
+      <div className="flex flex-row overflow-x-auto pb-8">
         {data.map((item, index) => (
           <ServicesItem
             key={item.id}
@@ -72,7 +72,7 @@ const Services = () => {
         ))}
       </div>
 
-      <div className="pt-4 space-x-2 flex justify-center">
+      <div className="pt-4 space-x-2 flex justify-center lg:hidden">
         {data.map((_, index) => (
           <span
             key={index}

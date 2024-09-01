@@ -1,5 +1,5 @@
 import detalleFurgo from "../../public/img/detalle_furgo.webp";
-import motoPaisaje from "../../public/img/moto_paisaje.webp";
+import motoPaisaje from "../../public/img/carga_moto.webp";
 import furgo1 from "../../public/img/furgo1.webp";
 
 export const navbarItems = [
