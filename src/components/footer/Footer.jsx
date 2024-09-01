@@ -26,7 +26,7 @@ const Footer = () => {
             </div>
           </div>
           <p className="font-semibold">
-          Made with love by{" "}
+          Made with ❤️ by{" "}
           <a
             href="https://www.linkedin.com/in/fernandoescalonalonso/"
             rel="nofollow noopener noreferrer"
